@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPS-Free Indoor AI Navigation</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+<div><h1>GPS-Free Indoor AI Navigation</h1><p>Visual localization + graph routing • runs locally</p></div>
+<span class="badge">NO GPS • NO API • NO DB</span>
+</header>
+
+<main>
+<section class="card">
+<h2>1. Identify your location</h2>
+<p>Capture a corridor/landmark view or upload an image.</p>
+<video id="camera" autoplay playsinline></video>
+<canvas id="canvas" hidden></canvas>
+<div class="buttons">
+<button id="startCamera">Start camera</button>
+<button id="capture">Capture & Localize</button>
+<label class="upload">Upload image <input id="upload" type="file" accept="image/*"></label>
+</div>
+<div id="localization" class="result">Waiting for an image...</div>
+</section>
+
+<section class="card">
+<h2>2. Navigate</h2>
+<label>Start location<select id="start"></select></label>
+<label>Destination<select id="destination"></select></label>
+<button id="route">Calculate route</button>
+<div id="routeResult" class="result">No route calculated.</div>
+</section>
+
+<section class="card">
+<h2>Pipeline</h2>
+<div class="flow">
+<span>Camera</span><b>→</b><span>ORB Features</span><b>→</b>
+<span>Visual Match</span><b>→</b><span>Location</span><b>→</b>
+<span>Dijkstra</span><b>→</b><span>Route</span>
+</div>
+<p class="small">For real deployment, collect multiple images per location and evaluate accuracy under lighting, viewpoints and crowds.</p>
+</section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
