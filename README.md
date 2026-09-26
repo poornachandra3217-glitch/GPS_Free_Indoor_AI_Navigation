@@ -855,7 +855,7 @@ This project was developed as a collaborative learning project.
 ### Contributors
 
 - **Poorna Chandra Manupati** — [GitHub](https://github.com/poornachandra3217-glitch)
-- **[Friend's Name]** — [GitHub/Profile Link]
+- **BHARGAVA VAGATHURI** — (https://github.com/vbhargava0203-glitch)
 
 ### Contributions
 
